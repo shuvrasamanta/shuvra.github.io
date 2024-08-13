@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(img2.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #container{
+            width: 500px;
+            height: 500px;
+            
+            position: absolute;
+
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            background-color: rgba(21, 20, 20, 0.5);
+            box-shadow: 2px 2px 30px black;
+
+        }
+        h2{
+            text-align: center;
+            font-size: 35px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: wheat;
+        }
+        #sub{
+            text-align: center;
+        }
+        .p1{
+            text-align: left;
+            margin-left: 70px;
+            font-size: 23px;
+            font-weight: bold;
+            color: white;
+        }
+        .i1{
+            width: 250px;
+            height: 25px;
+            border-radius: 10px;
+            background-color: transparent;
+            border: 1px solid white;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+        }
+        #btn{
+            width: 80px;
+            height: 28px;
+            border-radius: 5px;
+            margin-left: 200px;
+            margin-top: 20px;
+            background-color: wheat;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        #btn:hover{
+            background-color: black;
+            color: rgb(1, 142, 1);
+        }
+        #result{
+            /* border: 2px solid blue; */
+            height: 70px;
+            width: 350px;
+            margin-left: 70px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 25px;
+            box-shadow: 2px 2px 30px black;
+            color: white;
+        }
+        #sub2{
+            width: 500px;
+            height: 35px;
+            /* border: 2px solid red; */
+            margin-top: 47px;
+            display: flex;
+        }
+        .chart{
+            width: 125px;
+            height: 35px;
+            /* border: 1px solid black; */
+            text-align: center;
+           
+        }
+        .p3{
+            margin-top: 7px;
+            font-weight: bold;
+        }
+        #sky{
+            background-color: rgb(84, 193, 237);
+        }
+        #green{
+            background-color: rgb(20, 232, 34);
+        }
+        #orange{
+            background-color: orange;
+        }
+        #red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>BMI CALCULATOR</h2>
+        <div id="sub">
+            <p class="p1">Height</p>
+            <input type="text" class="i1" id="h">
+            <p class="p1">Weight</p>
+            <input type="text" class="i1" id="w">
+        </div>
+        <button id="btn">SUBMIT</button>
+        <div id="result">Your Result Here</div>
+        <div id="sub2">
+            <div class="chart" id="sky"><p class="p3">Less than 18.5</p></div>
+            <div class="chart" id="green"><p class="p3">18.5 - 24.9</p></div>
+            <div class="chart" id="orange"><p class="p3">25.0 - 29.9</p></div>
+            <div class="chart" id="red"><p class="p3">Above 30</p></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let button=document.querySelector("#btn");
+    
+    button.addEventListener("click",function(){
+        let h=parseInt(document.querySelector("#h").value);
+        let w=parseInt(document.querySelector("#w").value);
+        console.log(h);
+        let meter=(h/37.39);
+        let result=document.querySelector("#result");
+
+        let final=w/(meter*meter);
+
+        result.innerHTML=final;
+
+        if(final<18.5){
+            result.innerHTML="<b>BMI :</b>"+result.innerHTML +"<br> You are Under Weight";
+            result.style.color="#0096FF";
+        }
+        else if(final>=18.5 && final<24.9){
+            result.innerHTML="<b>BMI :</b>"+result.innerHTML +"<br> You are Fit";
+            result.style.color="#32CD32";
+        }
+        else if(final>24.9 && final<29.9){
+            result.innerHTML="<b>BMI :</b>"+result.innerHTML +"<br> You are Over Weight";
+            result.style.color="#FFA500";
+        }
+       else if(final>30){
+            result.innerHTML="<b>BMI :</b>"+result.innerHTML +"<br> Suffering from Obisity";
+            result.style.color="#FF0000";
+        }
+    })
+    
+</script>
+</html>
