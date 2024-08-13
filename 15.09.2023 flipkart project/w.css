@@ -1,0 +1,56 @@
+nav:hover{
+    background: aqua;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 3px rgb(67, 8, 230);
+    transform: 10s;
+    transition: 1s;
+}
+ul{
+    float: right;
+    font-size: 18pt;
+    margin-right: 10px;
+    margin-top: -80px;
+    color: rgb(233, 33, 33);
+    font-style: calc(bold);
+}
+li{
+    display: inline-block;
+    padding-left: 50px;
+}
+a{
+    color: white;
+text-decoration: none;
+}
+h1{
+    color: rgb(226, 27, 27);
+    margin-left: 25px;
+    line-height: 80px;
+    font-size: 20pt;
+}
+h2{
+    font-size: 5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 400px;
+    margin-top: 100px;
+    animation-name: abcd;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes abcd{
+    0%{color:aquamarine; font-size: 6em;}
+    25%{color:rgb(255, 195, 127); font-size: 7em;}
+    50%{color:rgb(127, 146, 255); font-size: 8em;}
+    75%{color:rgb(255, 127, 138); font-size: 7em;}
+    100%{color:rgb(127, 255, 144); font-size: 6em;}
+}
+body{
+    background-image: url(festival.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a:hover{
+    color: aqua;
+    font-weight: bold;
+    font-size: 20pt;
+}
